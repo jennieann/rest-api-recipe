@@ -11,3 +11,9 @@ In the package.json for the React App we have set the proxy to port 3001, wich i
 
 - cd /workspace/rest-api-recipe/puppies
 - yarn start
+
+# Set up the DB with some data
+Stand in this folder /workspace/rest-api-recipe/node-postgres-promises.
+From the command line run:
+- sudo -u postgres psql -f receipes.sql
+
