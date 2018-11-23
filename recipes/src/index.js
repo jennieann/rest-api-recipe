@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Categories from './Categories/Categories';
 import Recipes from './Recipes/Recipes';
-import registerServiceWorker from './registerServiceWorker';
+import Recipe from './Recipe/Recipe';
+import AddRecipe from './Recipe/AddRecipe/AddRecipe';
 
 const routing = (
   <Router>
     <div>
       <Route path="/" component={App} />
-      <Route path="/categories" component={Categories} />
-      <Route path="/recipes" component={Recipes} />
+      <Route path="/categories/" component={Categories} />
+      <Route path="/recipes/:id" component={Recipes} />
+      <Route exact path="/recipe/" component={AddRecipe} />
+      <Route path="/recipe/:id" component={Recipe} />
     </div>
   </Router>
 );
 
 ReactDOM.render(routing, document.getElementById('root'));
-registerServiceWorker();

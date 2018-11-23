@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 //import './style.css';
 
 class Recipes extends Component {
   state = { recipes: [] };
 
   componentDidMount() {
-    fetch('/api/recipes/')
+    fetch(`/api/categories/${this.props.match.params.id}/recipe/`)
       .then(res => res.json())
       .then(data => this.setState({ recipes: data.data }));
   }
@@ -13,9 +14,11 @@ class Recipes extends Component {
   render() {
     return (
       <div className="recipes">
-        <h3>Recept</h3>
+        <h2>Recept</h2>
         {this.state.recipes.map(recipe => (
-          <div key={recipe.id}>{recipe.name}</div>
+          <div key={recipe.id}>
+            <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+          </div>
         ))}
       </div>
     );

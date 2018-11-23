@@ -14,10 +14,10 @@ class Categories extends Component {
   render() {
     return (
       <div className="Categories">
-        <h2>Vad vill du äta</h2>
+        <h2>Kategorier</h2>
         {this.state.categories.map(category => (
           <div key={category.id}>
-            <Link to={`/recips`} id={category.id}>
+            <Link to={`/recipes/${category.id}`} id={category.id}>
               {category.name}
             </Link>
           </div>
