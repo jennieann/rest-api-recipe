@@ -6,7 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
+    "bluebird": "^3.5.3",
     "constantinople": "^3.1.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -14,7 +14,8 @@
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "pg-promise": "^8.4.4",
+    "pg": "^7.8.0",
+    "pg-promise": "^8.5.5",
     "pug": "^2.0.3"
   }
 }
