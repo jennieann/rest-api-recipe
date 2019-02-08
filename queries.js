@@ -85,19 +85,21 @@ function getSingleRecipe(req, res, next) {
 
 //POST
 function createRecipe(req, res, next) {
+  console.log(req.body);
   db
     .none(
-      'insert into pups(name, ingredients, description, difficulty, time_cooking ,categories_id)' +
-        'values(${name}, ${ingredients}, ${description}, ${difficulty}, ${time_cooking}, ${categoriesid})',
+      'insert into recipes(name, ingredients, description, difficulty, time_cooking ,categories_id)' +
+        'values(${name}, ${ingredients}, ${description}, ${difficulty}, ${time_cooking}, ${categories_id})',
       req.body
     )
     .then(function() {
       res.status(200).json({
         status: 'success',
-        message: 'Inserted one puppy'
+        message: 'Inserted one recipe'
       });
     })
     .catch(function(err) {
+      console.log(err);
       return next(err);
     });
 }
